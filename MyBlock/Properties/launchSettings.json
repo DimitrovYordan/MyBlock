@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "MyBlock": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Home/Index",
+      "applicationUrl": "http://localhost:5000"
+    }
+  }
+}
