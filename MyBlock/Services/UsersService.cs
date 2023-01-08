@@ -64,20 +64,6 @@ namespace MyBlock.Services
             return this.repository.Update(id, changePasswird);
         }
 
-        public void Delete(int id, string username)
-        {
-            User userToDelete = this.GetById(id);
-            if (userToDelete.Username != username && this.GetByUsername(username).IsAdmin == false)
-            {
-                throw new UnauthorizedOperationException("Delete operation denied.");
-            }
-            else
-            {
-                this.repository.Delete(id);
-            }
-
-        }
-
         public bool UsernameExists(string username)
         {
             bool usernameExists = true;

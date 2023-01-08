@@ -7,7 +7,6 @@ namespace MyBlock.Services.Interfaces
     public interface IUsersService
     {
         public User Create(User newUser);
-        public void Delete(int id, string username);
         public User Update(int id, User updateUser, string username);
         public User Update(int id, ChangePasswordViewModel changePasswird);
         public List<User> GetAll();
