@@ -1,6 +1,6 @@
 ﻿namespace MyBlock.Models
 {
-    public class PostViewModel
+    public class PostViewModel : Post
     {
         public string newComment { get; set; }
         public int Like { get; set; }
