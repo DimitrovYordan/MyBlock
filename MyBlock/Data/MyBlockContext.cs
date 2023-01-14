@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+
+using Microsoft.EntityFrameworkCore;
 using MyBlock.Models;
 using MyBlock.Models.Relational_Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyBlock.Data
 {
@@ -24,6 +23,7 @@ namespace MyBlock.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             List<User> users = new List<User>()
             {
                 new User
