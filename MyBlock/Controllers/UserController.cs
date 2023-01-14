@@ -81,44 +81,5 @@ namespace MyBlock.Controllers
             return this.RedirectToAction("Settings", "User");
         }
 
-        [HttpGet]
-        public IActionResult Delete([FromRoute] int id)
-        {
-            try
-            {
-                var user = this.usersService.GetById(id);
-
-                return this.View(user);
-            }
-            catch (EntityNotFoundException ex)
-            {
-                this.Response.StatusCode = StatusCodes.Status404NotFound;
-                this.ViewData["ErrorMessage"] = ex.Message;
-
-                return this.View("Error");
-            }
-
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed([FromRoute] int id)
-        {
-            try
-            {
-                var user = this.authManager.TryGetUser(this.authManager.CurrentUser.Username);
-                this.usersService.Delete(id, this.authManager.CurrentUser.Username);
-
-                return this.RedirectToAction("Index", "Post");
-            }
-            catch (EntityNotFoundException ex)
-            {
-                this.Response.StatusCode = StatusCodes.Status404NotFound;
-                this.ViewData["ErrorMessage"] = ex.Message;
-
-                return this.View("Error");
-            }
-
-        }
-
     }
 }
